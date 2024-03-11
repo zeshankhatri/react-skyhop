@@ -14,18 +14,92 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #ffffff;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #243d6b;
 }
 
 .App-link {
   color: #61dafb;
+}
+
+.Modal-button {
+  position: absolute;
+  z-index: 1;
+  background-color: #243d6b;
+  color: #ffffff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.Modal-button:hover {
+  background-color: #295cb8;
+}
+
+.Modal-background {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #b3b3b3;
+  min-height: inherit;
+  min-width: 100%;
+}
+
+.Modal {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.Modal-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-left: 10px;
+  margin-bottom: 20px;
+}
+
+.button-grid-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.Modal-close {
+  background-color: #243d6b;
+  color: #ffffff;
+  padding: 10px;
+  padding-inline: 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.Modal-close:hover {
+  background-color: #295cb8;
+}
+
+.Modal-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #293e5c;
+}
+
+.Modal-body {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  margin-bottom: 20px;
 }
 
 @keyframes App-logo-spin {
