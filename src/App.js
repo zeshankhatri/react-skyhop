@@ -1,4 +1,5 @@
 import "./App.css";
+import Dropdown from "./Dropdown";
 import { useState } from "react";
 
 function App() {
@@ -24,7 +25,18 @@ function App() {
                 </div>
                 <p className="Modal-title">Document Upload</p>
               </div>
-              <div className="Modal-body"></div>
+              <div className="Modal-body">
+                <div className="Modal-body-left">
+                  <Dropdown
+                    menuItems={[
+                      "Import Type 1",
+                      "Import Type 2",
+                      "Import Type 3",
+                    ]}
+                  />
+                </div>
+                <div></div>
+              </div>
             </div>
           </div>
         )}

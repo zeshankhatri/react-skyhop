@@ -57,7 +57,8 @@
 
 .Modal {
   background-color: #ffffff;
-  padding: 20px;
+  padding-inline: 50px;
+  padding-block: 20px;
   border-radius: 20px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
@@ -66,7 +67,6 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   margin-left: 10px;
-  margin-bottom: 20px;
 }
 
 .button-grid-item {
@@ -79,9 +79,10 @@
   background-color: #243d6b;
   color: #ffffff;
   padding: 10px;
+  margin-left: -30px;
   padding-inline: 15px;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
   font-size: 16px;
 }
@@ -94,12 +95,21 @@
   font-size: 24px;
   font-weight: bold;
   color: #293e5c;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #f0f0f0;
 }
 
 .Modal-body {
   display: grid;
   grid-template-columns: 3fr 2fr;
   margin-bottom: 20px;
+}
+
+.Modal-body-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 @keyframes App-logo-spin {
