@@ -1,0 +1,45 @@
+.Line {
+  border: 2px solid #f0f0f0;
+  width: 75%;
+  margin-left: 0;
+}
+
+.Dropdown-form {
+  display: flex;
+  justify-content: space-between;
+  background-color: #ffffff;
+  border: 2px solid #f0f0f0;
+  border-radius: 20px;
+  padding-left: 15px;
+  cursor: pointer;
+}
+
+.Dropdown-form:hover {
+  border: 2px solid #000000;
+}
+
+.Dropdown-selected {
+  width: 300px;
+  text-align: left;
+}
+
+.Dropdown-menu {
+  position: absolute;
+  list-style-type: none;
+  margin: 5px;
+  padding: 0;
+  border: 2px solid #f0f0f0;
+  width: 10%;
+}
+
+.Dropdown-menu > li {
+  background-color: #ffffff;
+  font: 16px Arial;
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.Dropdown-menu > li:hover {
+  background-color: lightgray;
+}
