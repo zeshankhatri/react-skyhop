@@ -6,11 +6,11 @@ export default function ToggleSwitch() {
 
   return (
     <div className="Toggle-container">
-      <div className={`Toggle ${!toggle ? "disable" : ""}`}>
-        <div
-          className={`Toggle-button ${!toggle ? "move" : ""}`}
-          onClick={() => setToggle(!toggle)}
-        ></div>
+      <div
+        className={`Toggle ${!toggle ? "disable" : ""}`}
+        onClick={() => setToggle(!toggle)}
+      >
+        <div className={`Toggle-button ${!toggle ? "move" : ""}`}></div>
       </div>
       <p className="Toggle-text">Toggle {toggle ? "ON" : "OFF"}</p>
     </div>

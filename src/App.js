@@ -1,6 +1,7 @@
 import "./App.css";
 import Dropdown from "./components/Dropdown";
 import ToggleSwitch from "./components/ToggleSwitch";
+import Radio from "./components/Radio";
 import { useState } from "react";
 
 function App() {
@@ -111,6 +112,12 @@ function App() {
                     </svg>
                     <p className="Tolerance-text">Select Tolerance Level</p>
                   </div>
+                </div>
+                <div className="Modal-body-right">
+                  <p className="Modal-subheading">
+                    Split schedule using social distancing?
+                  </p>
+                  <Radio options={["Yes", "No"]} />
                 </div>
               </div>
             </div>
