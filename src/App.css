@@ -111,7 +111,7 @@
   font-size: 12px;
   font-weight: bold;
   color: #293e5c;
-  padding-bottom: 10px;
+  margin-top: 0;
 }
 
 .Upload-container {
@@ -154,12 +154,12 @@
   background-color: #295cb8;
 }
 
-.Upload-filename {
+.Success-text {
   font-size: 12px;
   font-weight: bold;
   color: #5bb394;
   text-align: center;
-  padding-bottom: 10px;
+  margin-top: 0;
 }
 
 .Upload-input {

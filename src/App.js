@@ -1,17 +1,28 @@
 import "./App.css";
-import Dropdown from "./Dropdown";
+import Dropdown from "./components/Dropdown";
 import { useState } from "react";
 
 function App() {
   const [modal, setModal] = useState(false);
   const [filename, setFilename] = useState(null);
 
-  const fileChangeHandler = (event) => {
-    const reader = new FileReader();
+  const handleClose = () => {
+    setModal(false);
+    setFilename(null);
+  };
 
+  const fileChangeHandler = (event) => {
     if (event.target.files[0]) {
-      reader.readAsDataURL(event.target.files[0]);
       const filename = event.target.files[0].name;
+      setFilename(filename);
+    }
+  };
+
+  const handleDrop = (event) => {
+    event.preventDefault();
+
+    if (event.dataTransfer.files[0]) {
+      const filename = event.dataTransfer.files[0].name;
       setFilename(filename);
     }
   };
@@ -27,10 +38,7 @@ function App() {
             <div className="Modal">
               <div className="Modal-header">
                 <div className="button-grid-item">
-                  <button
-                    className="Modal-close"
-                    onClick={() => setModal(false)}
-                  >
+                  <button className="Modal-close" onClick={handleClose}>
                     x
                   </button>
                 </div>
@@ -50,7 +58,11 @@ function App() {
                     Select a manifest you'd like to import
                   </p>
                   <label>
-                    <div className="Upload-container">
+                    <div
+                      className="Upload-container"
+                      onDrop={handleDrop}
+                      onDragOver={(event) => event.preventDefault()}
+                    >
                       <div className="Upload-icon">
                         <svg
                           fill="#f79c24"
@@ -66,7 +78,11 @@ function App() {
                         </p>
                       </div>
                       <div className="Upload-button">Upload Manifest</div>
-                      {filename && <p className="Upload-filename">Current Manifest Chosen: {filename}</p>}
+                      {filename && (
+                        <p className="Success-text">
+                          Current Manifest Chosen: {filename}
+                        </p>
+                      )}
                     </div>
                     <input
                       type="file"
@@ -75,6 +91,12 @@ function App() {
                       className="Upload-input"
                     ></input>
                   </label>
+                  <hr className="Line"></hr>
+                  <p className="Modal-subheading">Elapse Data Checking</p>
+                  <p className="Success-text">No Elapsed Dates!</p>
+                  <hr className="Line"></hr>
+                  <p className="Modal-subheading">Tolerence Window:</p>
+                  <div className="Tolerance-window"></div>
                 </div>
               </div>
             </div>
