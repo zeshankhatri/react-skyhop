@@ -165,3 +165,19 @@
 .Upload-input {
   display: none;
 }
+
+.Tolerance-window {
+  display: flex;
+}
+
+.Vertical-line {
+  border-left: 1px solid green;
+  height: 100%;
+  margin-inline: 10px;
+}
+
+.Tolerance-text {
+  margin: 0;
+  margin-left: 3px;
+  font-size: 12px;
+}

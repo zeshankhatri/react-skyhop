@@ -1,0 +1,40 @@
+.Toggle-container {
+    display: flex;
+    gap: 10px;
+}
+
+.Toggle {
+  position: relative;
+  width: 40px;
+  height: 17px;
+  background-color: #243d6b;
+  cursor: pointer;
+  border-radius: 20px;
+  padding: 3px;
+}
+
+.Toggle-button {
+  box-sizing: border-box;
+  cursor: pointer;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgb(0, 0, 0, 0.25);
+  padding: 8px 8px;
+  border-radius: 20px;
+  position: absolute;
+  transition: all 0.2s ease;
+  left: 26px;
+}
+
+.disable {
+  background-color: #707070;
+}
+
+.move {
+  left: 5px;
+}
+
+.Toggle-text {
+    margin: 0;
+    margin-top: 3px;
+    font-size: 12px;
+}
