@@ -135,12 +135,16 @@ function App() {
                 </div>
               </div>
               <div className="Modal-footer">
-                <p>
-                  Data in the import file is correct. Please press Continue to
-                  import
-                </p>
+                {filename ? (
+                  <p>
+                    Data in the import file is correct. Please press Continue to
+                    import.
+                  </p>
+                ) : (
+                  <p>Data file missing. Please upload a file to check data.</p>
+                )}
                 <div className="Modal-footer-buttons">
-                  <button className="Continue-button">Continue import</button>
+                  <button className="Continue-button">Continue Import</button>
                   <button className="Cancel-button" onClick={handleClose}>
                     Cancel
                   </button>
