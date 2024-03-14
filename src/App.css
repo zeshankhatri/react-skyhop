@@ -209,6 +209,10 @@
   display: none;
 }
 
+.warning {
+  color: red;
+}
+
 .Progress-bar {
   color: rgba(91, 179, 148, 1);
   height: 20px;

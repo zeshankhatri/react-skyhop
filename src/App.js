@@ -9,6 +9,7 @@ function App() {
   const [modal, setModal] = useState(false);
   const [filename, setFilename] = useState(null);
   const [submit, setSubmit] = useState(false);
+  const [fileMissing, setFileMissing] = useState(false);
 
   const handleClose = () => {
     setModal(false);
@@ -16,10 +17,19 @@ function App() {
     setSubmit(false);
   };
 
+  const handleSubmit = () => {
+    if (filename) {
+      setSubmit(true);
+    } else {
+      setFileMissing(true);
+    }
+  };
+
   const fileChangeHandler = (event) => {
     if (event.target.files[0]) {
       const filename = event.target.files[0].name;
       setFilename(filename);
+      setFileMissing(false);
       setSubmit(false);
     }
   };
@@ -30,6 +40,7 @@ function App() {
     if (event.dataTransfer.files[0]) {
       const filename = event.dataTransfer.files[0].name;
       setFilename(filename);
+      setFileMissing(false);
       setSubmit(false);
     }
   };
@@ -145,18 +156,15 @@ function App() {
                     import.
                   </p>
                 ) : (
-                  <p className={`${submit ? "hidden" : ""}`}>
+                  <p className={`${fileMissing ? "warning" : ""}`}>
                     Data file missing. Please upload a file to check data.
                   </p>
                 )}
-                {filename && submit && (
+                {submit && (
                   <p className="Progress-bar">Successfully Uploaded!</p>
                 )}
                 <div>
-                  <button
-                    className="Continue-button"
-                    onClick={() => setSubmit(true)}
-                  >
+                  <button className="Continue-button" onClick={handleSubmit}>
                     Continue Import
                   </button>
                   <button className="Cancel-button" onClick={handleClose}>
