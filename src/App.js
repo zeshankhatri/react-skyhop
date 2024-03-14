@@ -1,6 +1,8 @@
 import "./App.css";
 import Dropdown from "./components/Dropdown";
 import ToggleSwitch from "./components/ToggleSwitch";
+import Radio from "./components/Radio";
+import TestingCenter from "./components/TestingCenter";
 import { useState } from "react";
 
 function App() {
@@ -47,18 +49,21 @@ function App() {
               </div>
               <div className="Modal-body">
                 <div className="Modal-body-left">
-                  <Dropdown
-                    menuItems={[
-                      "Import Type 1",
-                      "Import Type 2",
-                      "Import Type 3",
-                    ]}
-                  />
-                  <hr className="Line" />
+                  <div className="Dropdown-import">
+                    <Dropdown
+                      label="Select Import Name:"
+                      menuItems={[
+                        "Import Type 1",
+                        "Import Type 2",
+                        "Import Type 3",
+                      ]}
+                    />
+                  </div>
+                  <hr className="Line-left" />
                   <p className="Modal-subheading">
                     Select a manifest you'd like to import
                   </p>
-                  <label>
+                  <label className="Upload">
                     <div
                       className="Upload-container"
                       onDrop={handleDrop}
@@ -92,10 +97,10 @@ function App() {
                       className="Upload-input"
                     ></input>
                   </label>
-                  <hr className="Line"></hr>
+                  <hr className="Line-left"></hr>
                   <p className="Modal-subheading">Elapse Data Checking</p>
                   <p className="Success-text">No Elapsed Dates!</p>
-                  <hr className="Line"></hr>
+                  <hr className="Line-left"></hr>
                   <p className="Modal-subheading">Tolerence Window:</p>
                   <div className="Tolerance-window">
                     <ToggleSwitch />
@@ -111,6 +116,34 @@ function App() {
                     </svg>
                     <p className="Tolerance-text">Select Tolerance Level</p>
                   </div>
+                </div>
+                <div className="Modal-body-right">
+                  <p className="Modal-subheading">
+                    Split schedule using social distancing?
+                  </p>
+                  <Radio options={["Yes", "No"]} />
+                  <hr className="Line-right"></hr>
+                  <p className="Modal-subheading">Location Checking</p>
+                  <p className="Success-text">All available!</p>
+                  <hr className="Line-right"></hr>
+                  <p className="Modal-subheading">Client</p>
+                  <Radio options={["Single", "Multiple"]} />
+                  <TestingCenter id={1} />
+                  <TestingCenter id={2} />
+                  <TestingCenter id={3} />
+                  <TestingCenter id={4} />
+                </div>
+              </div>
+              <div className="Modal-footer">
+                <p>
+                  Data in the import file is correct. Please press Continue to
+                  import
+                </p>
+                <div className="Modal-footer-buttons">
+                  <button className="Continue-button">Continue import</button>
+                  <button className="Cancel-button" onClick={handleClose}>
+                    Cancel
+                  </button>
                 </div>
               </div>
             </div>

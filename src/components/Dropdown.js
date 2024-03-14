@@ -1,9 +1,9 @@
 import "./Dropdown.css";
 import { useState } from "react";
 
-export default function Dropdown({ menuItems }) {
+export default function Dropdown({ label, menuItems }) {
   const [open, setOpen] = useState(false);
-  const [selected, setSelected] = useState("Select Import Name:");
+  const [selected, setSelected] = useState(label);
 
   const handleSelect = (menuItem) => {
     setSelected(menuItem);
@@ -11,7 +11,7 @@ export default function Dropdown({ menuItems }) {
   };
 
   return (
-    <div>
+    <div className="Dropdown">
       <button className="Dropdown-form" onClick={() => setOpen(!open)}>
         <p className="Dropdown-selected">{selected}</p>
         <svg

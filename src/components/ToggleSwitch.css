@@ -1,6 +1,6 @@
 .Toggle-container {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: 10px;
 }
 
 .Toggle {
@@ -11,6 +11,10 @@
   cursor: pointer;
   border-radius: 20px;
   padding: 3px;
+}
+
+.Toggle:hover {
+  background-color: #295cb8;
 }
 
 .Toggle-button {
@@ -29,12 +33,16 @@
   background-color: #707070;
 }
 
+.disable:hover {
+  background-color: #888888;
+}
+
 .move {
   left: 5px;
 }
 
 .Toggle-text {
-    margin: 0;
-    margin-top: 3px;
-    font-size: 12px;
+  margin: 0;
+  margin-top: 3px;
+  font-size: 12px;
 }

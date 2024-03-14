@@ -1,0 +1,24 @@
+.Testing-center {
+  display: flex;
+  margin-top: 10px;
+}
+
+.Testing-center-label {
+  text-align: start;
+  font-size: 13px;
+  text-wrap: nowrap;
+  padding-bottom: 12px;
+}
+
+.Testing-center-dropdown {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  margin-left: 20px;
+  width: 150px;
+}
+
+.Testing-center-icon {
+  display: flex;
+  align-items: center;
+}
