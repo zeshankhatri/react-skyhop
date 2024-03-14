@@ -8,16 +8,19 @@ import { useState } from "react";
 function App() {
   const [modal, setModal] = useState(false);
   const [filename, setFilename] = useState(null);
+  const [submit, setSubmit] = useState(false);
 
   const handleClose = () => {
     setModal(false);
     setFilename(null);
+    setSubmit(false);
   };
 
   const fileChangeHandler = (event) => {
     if (event.target.files[0]) {
       const filename = event.target.files[0].name;
       setFilename(filename);
+      setSubmit(false);
     }
   };
 
@@ -27,6 +30,7 @@ function App() {
     if (event.dataTransfer.files[0]) {
       const filename = event.dataTransfer.files[0].name;
       setFilename(filename);
+      setSubmit(false);
     }
   };
 
@@ -136,15 +140,25 @@ function App() {
               </div>
               <div className="Modal-footer">
                 {filename ? (
-                  <p>
+                  <p className={`${submit ? "hidden" : ""}`}>
                     Data in the import file is correct. Please press Continue to
                     import.
                   </p>
                 ) : (
-                  <p>Data file missing. Please upload a file to check data.</p>
+                  <p className={`${submit ? "hidden" : ""}`}>
+                    Data file missing. Please upload a file to check data.
+                  </p>
                 )}
-                <div className="Modal-footer-buttons">
-                  <button className="Continue-button">Continue Import</button>
+                {filename && submit && (
+                  <p className="Progress-bar">Successfully Uploaded!</p>
+                )}
+                <div>
+                  <button
+                    className="Continue-button"
+                    onClick={() => setSubmit(true)}
+                  >
+                    Continue Import
+                  </button>
                   <button className="Cancel-button" onClick={handleClose}>
                     Cancel
                   </button>

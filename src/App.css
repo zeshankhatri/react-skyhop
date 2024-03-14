@@ -182,7 +182,7 @@
 }
 
 .Vertical-line {
-  border-left: 1px solid green;
+  border-left: 1px solid #295cb8;
   height: 100%;
   margin-inline: 10px;
 }
@@ -203,6 +203,29 @@
 
 .Modal-footer {
   font-weight: bold;
+}
+
+.hidden {
+  display: none;
+}
+
+.Progress-bar {
+  color: rgba(91, 179, 148, 1);
+  height: 20px;
+  animation: progress-bar 2s ease-in-out;
+}
+
+@keyframes progress-bar {
+  from {
+    width: 0%;
+    background-color: #5bb394;
+    color: rgba(91, 179, 148, 0);
+  }
+  to {
+    width: 100%;
+    background-color: #5bb394;
+    color: rgba(91, 179, 148, 0);
+  }
 }
 
 .Continue-button {
