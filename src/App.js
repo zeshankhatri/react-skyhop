@@ -2,6 +2,7 @@ import "./App.css";
 import Dropdown from "./components/Dropdown";
 import ToggleSwitch from "./components/ToggleSwitch";
 import Radio from "./components/Radio";
+import TestingCenter from "./components/TestingCenter";
 import { useState } from "react";
 
 function App() {
@@ -48,18 +49,21 @@ function App() {
               </div>
               <div className="Modal-body">
                 <div className="Modal-body-left">
-                  <Dropdown
-                    menuItems={[
-                      "Import Type 1",
-                      "Import Type 2",
-                      "Import Type 3",
-                    ]}
-                  />
+                  <div className="Dropdown-import">
+                    <Dropdown
+                      label="Select Import Name:"
+                      menuItems={[
+                        "Import Type 1",
+                        "Import Type 2",
+                        "Import Type 3",
+                      ]}
+                    />
+                  </div>
                   <hr className="Line-left" />
                   <p className="Modal-subheading">
                     Select a manifest you'd like to import
                   </p>
-                  <label>
+                  <label className="Upload">
                     <div
                       className="Upload-container"
                       onDrop={handleDrop}
@@ -121,8 +125,13 @@ function App() {
                   <hr className="Line-right"></hr>
                   <p className="Modal-subheading">Location Checking</p>
                   <p className="Success-text">All available!</p>
+                  <hr className="Line-right"></hr>
                   <p className="Modal-subheading">Client</p>
                   <Radio options={["Single", "Multiple"]} />
+                  <TestingCenter id={1} />
+                  <TestingCenter id={2} />
+                  <TestingCenter id={3} />
+                  <TestingCenter id={4} />
                 </div>
               </div>
               <div className="Modal-footer">
@@ -132,7 +141,9 @@ function App() {
                 </p>
                 <div className="Modal-footer-buttons">
                   <button className="Continue-button">Continue import</button>
-                  <button className="Cancel-button" onClick={handleClose}>Cancel</button>
+                  <button className="Cancel-button" onClick={handleClose}>
+                    Cancel
+                  </button>
                 </div>
               </div>
             </div>
