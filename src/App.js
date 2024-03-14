@@ -55,7 +55,7 @@ function App() {
                       "Import Type 3",
                     ]}
                   />
-                  <hr className="Line" />
+                  <hr className="Line-left" />
                   <p className="Modal-subheading">
                     Select a manifest you'd like to import
                   </p>
@@ -93,10 +93,10 @@ function App() {
                       className="Upload-input"
                     ></input>
                   </label>
-                  <hr className="Line"></hr>
+                  <hr className="Line-left"></hr>
                   <p className="Modal-subheading">Elapse Data Checking</p>
                   <p className="Success-text">No Elapsed Dates!</p>
-                  <hr className="Line"></hr>
+                  <hr className="Line-left"></hr>
                   <p className="Modal-subheading">Tolerence Window:</p>
                   <div className="Tolerance-window">
                     <ToggleSwitch />
@@ -118,6 +118,21 @@ function App() {
                     Split schedule using social distancing?
                   </p>
                   <Radio options={["Yes", "No"]} />
+                  <hr className="Line-right"></hr>
+                  <p className="Modal-subheading">Location Checking</p>
+                  <p className="Success-text">All available!</p>
+                  <p className="Modal-subheading">Client</p>
+                  <Radio options={["Single", "Multiple"]} />
+                </div>
+              </div>
+              <div className="Modal-footer">
+                <p>
+                  Data in the import file is correct. Please press Continue to
+                  import
+                </p>
+                <div className="Modal-footer-buttons">
+                  <button className="Continue-button">Continue import</button>
+                  <button className="Cancel-button" onClick={handleClose}>Cancel</button>
                 </div>
               </div>
             </div>

@@ -1,11 +1,10 @@
-import "./ToggleSwitch";
 import { useState } from "react";
 
 export default function Radio({ options }) {
-  const [selected, setSelected] = useState(options[0]);
+  const [selected, setSelected] = useState(null);
 
   return (
-    <form className="Radio">
+    <form>
       {options.map((option, index) => (
         <label className="Radio-option" key={index}>
           <input
